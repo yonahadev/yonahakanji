@@ -3,7 +3,11 @@ import Link from "next/link";
 import React from "react";
 import KanjiEntry from "./KanjiEntry";
 
-const KanjiTable = () => {
+interface Props {
+  searchResult: string;
+}
+
+const KanjiTable = ({ searchResult }: Props) => {
   const kanjiArray = Object.values(Kanji);
 
   return (

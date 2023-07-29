@@ -15,8 +15,7 @@ const KanjiEntry = ({ kanji }: Props) => {
       >
         {kanji[0]}
       </Link>
-      <p>{kanji[1]}</p>
-      <p>{kanji[2]}</p>
+      <p>{kanji[1]}</p> <p>{kanji[2]}</p>
       <p>{kanji[3]}</p>
       {kanji[4].map((translation: string) => (
         <p>{translation}</p>

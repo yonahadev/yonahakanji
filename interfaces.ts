@@ -8,4 +8,8 @@ interface KanjiEntry {
   id: number;
 }
 
+export interface FormData {
+  result: string;
+}
+
 export default KanjiEntry
