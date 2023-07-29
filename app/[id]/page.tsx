@@ -1,9 +1,10 @@
 import Kanji from "@/KanjiList.json";
+import KanjiEntry from "@/interfaces";
 
 const page = ({ params }: { params: { id: number } }) => {
   const id = params.id - 1;
   const kanjiArray = Object.values(Kanji);
-  const currentKanji = kanjiArray[id];
+  const currentKanji: KanjiEntry = kanjiArray[id];
 
   return (
     <div>
