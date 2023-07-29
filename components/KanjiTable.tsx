@@ -1,5 +1,4 @@
 import Kanji from "@/KanjiList.json";
-import Link from "next/link";
 import React from "react";
 import KanjiEntry from "./KanjiEntry";
 
@@ -10,10 +9,15 @@ interface Props {
 const KanjiTable = ({ searchResult }: Props) => {
   const kanjiArray = Object.values(Kanji);
 
+  const filteredKanji =
+    searchResult === ""
+      ? kanjiArray.slice(0, 10)
+      : kanjiArray.filter((kanji) => kanji[0].includes(searchResult));
+
   return (
     <div>
-      {kanjiArray.slice(0, 10).map((kanji, index) => (
-        <KanjiEntry kanji={kanji} />
+      {filteredKanji.map((kanji, index) => (
+        <KanjiEntry key={index} kanji={kanji} />
       ))}
     </div>
   );
