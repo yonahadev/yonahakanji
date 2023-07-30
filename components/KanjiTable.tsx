@@ -42,8 +42,8 @@ const KanjiTable = ({ searchResult }: Props) => {
           return (
             onyomi.includes(finalResult) ||
             kunyomi.includes(finalResult) ||
-            meanings.includes(searchResult) ||
-            kanjiChar === searchResult
+            meanings.includes(finalResult) ||
+            finalResult.split("").includes(kanjiChar)
           );
         });
   const length = filteredKanji.length;
