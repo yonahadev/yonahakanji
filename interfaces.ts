@@ -1,4 +1,4 @@
-interface KanjiEntry {
+interface KanjiEntryInterface {
   0: string;
   1: string;
   2: string;
@@ -12,4 +12,4 @@ export interface FormData {
   result: string;
 }
 
-export default KanjiEntry
+export default KanjiEntryInterface

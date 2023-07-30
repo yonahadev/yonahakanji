@@ -1,9 +1,9 @@
-import KanjiEntry from "@/interfaces";
+import KanjiEntryInterface from "@/interfaces";
 import Link from "next/link";
 import React from "react";
 
 interface Props {
-  kanji: KanjiEntry;
+  kanji: KanjiEntryInterface;
 }
 
 const KanjiEntry = ({ kanji }: Props) => {

@@ -1,4 +1,5 @@
 import Kanji from "@/KanjiList.json";
+import KanjiEntryInterface from "@/interfaces";
 import React from "react";
 import * as wanakana from "wanakana";
 import KanjiEntry from "./KanjiEntry";
@@ -46,12 +47,20 @@ const KanjiTable = ({ searchResult }: Props) => {
             finalResult.split("").includes(kanjiChar)
           );
         });
+
   const length = filteredKanji.length;
+
+  const freqKanji = filteredKanji.filter((entry) => entry[5]?.freq);
+  freqKanji.sort((entryA, entryB) => entryA[5]?.freq - entryB[5]?.freq);
+
+  const orderedKanji = freqKanji.concat(
+    filteredKanji.filter((entry) => !entry[5]?.freq)
+  );
 
   return (
     <div>
       <p>Found {length} results</p>
-      {filteredKanji.map((kanji, index) => (
+      {orderedKanji.map((kanji, index) => (
         <KanjiEntry key={index} kanji={kanji} />
       ))}
     </div>
