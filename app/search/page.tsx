@@ -6,6 +6,8 @@ import { FormData } from "@/interfaces";
 import { useEffect, useState } from "react";
 
 export default function Home({ params }: { params: { search: string } }) {
+  const [placeholderText, setPlaceholderText] = useState("");
+
   function isPercentEncoded(str: string) {
     const regex = /%[0-9A-Fa-f]{2}/g;
     return regex.test(str);
@@ -17,6 +19,7 @@ export default function Home({ params }: { params: { search: string } }) {
         params.search = decodeURIComponent(params.search);
       }
       setFormResult(params.search);
+      setPlaceholderText(params.search);
     }
   }, []);
   const submitEvent = (data: FormData) => {
@@ -28,7 +31,7 @@ export default function Home({ params }: { params: { search: string } }) {
   return (
     <main>
       {formResult ? <p>{formResult}</p> : null}
-      <SearchBar submitEvent={submitEvent} />
+      <SearchBar placeholderText={placeholderText} submitEvent={submitEvent} />
       <KanjiTable searchResult={formResult} />
     </main>
   );

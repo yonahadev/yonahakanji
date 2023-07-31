@@ -33,7 +33,7 @@ const KanjiTable = ({ searchResult }: Props) => {
 
   const filteredKanji =
     searchResult === ""
-      ? kanjiArray.slice(0, 10)
+      ? kanjiArray.slice(0, 0)
       : kanjiArray.filter((kanji) => {
           const onyomi = stringSplit(kanji[1]);
           const kunyomi = stringSplit(kanji[2]);

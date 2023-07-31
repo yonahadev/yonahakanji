@@ -10,15 +10,19 @@ const page = () => {
     router.push(`/search/${data.result}`);
   };
   return (
-    <div className="w-full h-[calc(100%-4rem)] flex justify-center items-center text-center">
-      <h1 className="text-3xl font-bold">
-        Esoteric{" "}
+    <div className="w-full h-[calc(100%-8rem)] flex justify-center items-center text-center flex-col gap-4">
+      <h1 className="text-3xl font-bold tracking-tighter">
+        Just another{" "}
         <span className="text-transparent bg-gradient-to-r from-primary to-accent bg-clip-text">
           Kanji
         </span>{" "}
-        Dictonary
+        dictonary
       </h1>
-      <SearchBar submitEvent={submitEvent} />
+      <SearchBar placeholderText="" submitEvent={submitEvent} />
+      <p className="text-sm">
+        yonahadic is a flexible Japanese-English Kanji dictonary. To get started
+        type something into the search bar.
+      </p>
     </div>
   );
 };

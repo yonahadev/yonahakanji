@@ -3,9 +3,16 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <nav className="w-full h-16 flex items-center justify-between font-semibold text-xl">
-      <Link href={"/"}>yonahadic</Link>
-      <Link href={"/about"}>About</Link>
+    <nav className="w-full h-16 flex items-center justify-between font-semibold text-xl tracking-tighter">
+      <Link href={"/"} className="">
+        <span className="text-accent">與那覇</span> yonahadic
+      </Link>
+      <Link
+        className="underline text-accent hover:text-primary"
+        href={"/about"}
+      >
+        About
+      </Link>
     </nav>
   );
 };
