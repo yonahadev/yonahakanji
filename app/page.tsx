@@ -1,25 +1,26 @@
 "use client";
-
-import KanjiTable from "@/components/KanjiTable";
 import SearchBar from "@/components/SearchBar";
 import { FormData } from "@/interfaces";
-import { useState } from "react";
+import { useRouter } from "next/navigation";
+import React from "react";
 
-export default function Home() {
+const page = () => {
+  const router = useRouter();
   const submitEvent = (data: FormData) => {
-    setFormResult(data);
+    router.push(`/search/${data.result}`);
   };
-
-  const [formResult, setFormResult] = useState<FormData>({
-    result: "",
-  });
-
   return (
-    <main>
-      <h1>yonaha-dic</h1>
-      {formResult ? <p>{formResult.result}</p> : null}
+    <div className="w-full h-[calc(100%-4rem)] flex justify-center items-center text-center">
+      <h1 className="text-3xl font-bold">
+        Esoteric{" "}
+        <span className="text-transparent bg-gradient-to-r from-primary to-accent bg-clip-text">
+          Kanji
+        </span>{" "}
+        Dictonary
+      </h1>
       <SearchBar submitEvent={submitEvent} />
-      <KanjiTable searchResult={formResult.result} />
-    </main>
+    </div>
   );
-}
+};
+
+export default page;

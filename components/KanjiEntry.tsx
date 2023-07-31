@@ -10,8 +10,8 @@ const KanjiEntry = ({ kanji }: Props) => {
   return (
     <div>
       <Link
-        href={`/${kanji.id}`}
-        className="text-xl text-blue-600 hover:text-blue-800 visited:text-purple-600 underline"
+        href={`/kanji/${kanji.id}`}
+        className="text-xl text-secondary hover:text-accent visited:text-primary underline"
       >
         {kanji[0]}
       </Link>
