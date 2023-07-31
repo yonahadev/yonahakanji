@@ -3,22 +3,33 @@
 import KanjiTable from "@/components/KanjiTable";
 import SearchBar from "@/components/SearchBar";
 import { FormData } from "@/interfaces";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function Home() {
+export default function Home({ params }: { params: { search: string } }) {
+  function isPercentEncoded(str: string) {
+    const regex = /%[0-9A-Fa-f]{2}/g;
+    return regex.test(str);
+  }
+
+  useEffect(() => {
+    if (params.search !== undefined) {
+      if (isPercentEncoded(params.search)) {
+        params.search = decodeURIComponent(params.search);
+      }
+      setFormResult(params.search);
+    }
+  }, []);
   const submitEvent = (data: FormData) => {
-    setFormResult(data);
+    setFormResult(data.result);
   };
 
-  const [formResult, setFormResult] = useState<FormData>({
-    result: "",
-  });
+  const [formResult, setFormResult] = useState<string>("");
 
   return (
     <main>
-      {formResult ? <p>{formResult.result}</p> : null}
+      {formResult ? <p>{formResult}</p> : null}
       <SearchBar submitEvent={submitEvent} />
-      <KanjiTable searchResult={formResult.result} />
+      <KanjiTable searchResult={formResult} />
     </main>
   );
 }
