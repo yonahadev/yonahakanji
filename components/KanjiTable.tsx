@@ -1,5 +1,6 @@
 import Kanji from "@/KanjiList.json";
 import KanjiEntryInterface from "@/interfaces";
+import Link from "next/link";
 import React from "react";
 import * as wanakana from "wanakana";
 import KanjiEntry from "./KanjiEntry";
@@ -16,7 +17,8 @@ const KanjiTable = ({ searchResult }: Props) => {
       return dotlessString;
     } else {
       const newString = wanakana.toRomaji(dotlessString);
-      return newString;
+      const lowerString = newString.toLowerCase();
+      return lowerString;
     }
   };
 
@@ -58,11 +60,23 @@ const KanjiTable = ({ searchResult }: Props) => {
   );
 
   return (
-    <div>
-      <p>Found {length} results</p>
+    <div className="mt-2">
+      <p className="opacity-50">
+        {searchResult == "" ? (
+          "Please enter something into the search bar."
+        ) : (
+          <>
+            Found {length} {length === 1 ? "result" : "results"} for{" "}
+            <span className="font-semibold">{searchResult}</span>
+          </>
+        )}
+      </p>
       {orderedKanji.map((kanji, index) => (
         <KanjiEntry key={index} kanji={kanji} />
       ))}
+      <Link className="underline text-accent" href={"/"}>
+        Back to main page
+      </Link>
     </div>
   );
 };

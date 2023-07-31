@@ -21,6 +21,7 @@ export default function Home({ params }: { params: { search: string } }) {
       setFormResult(params.search);
       setPlaceholderText(params.search);
     }
+    window.history.replaceState(null, "", "/search");
   }, []);
   const submitEvent = (data: FormData) => {
     setFormResult(data.result);
@@ -30,7 +31,6 @@ export default function Home({ params }: { params: { search: string } }) {
 
   return (
     <main>
-      {formResult ? <p>{formResult}</p> : null}
       <SearchBar placeholderText={placeholderText} submitEvent={submitEvent} />
       <KanjiTable searchResult={formResult} />
     </main>

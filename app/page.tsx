@@ -19,8 +19,8 @@ const page = () => {
         dictonary
       </h1>
       <SearchBar placeholderText="" submitEvent={submitEvent} />
-      <p className="text-sm">
-        yonahadic is a flexible Japanese-English Kanji dictonary. To get started
+      <p className="text-sm opacity-50">
+        yonahadic is a simple Japanese-English Kanji dictonary. To get started
         type something into the search bar.
       </p>
     </div>
