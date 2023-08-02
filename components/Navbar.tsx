@@ -5,12 +5,9 @@ const Navbar = () => {
   return (
     <nav className="w-full h-16 flex items-center justify-between font-semibold text-xl tracking-tighter">
       <Link href={"/"} className="">
-        <span className="text-accent">與那覇</span> yonahadic
+        <span className="text-accent font-normal">與那覇</span> yonahadic
       </Link>
-      <Link
-        className="underline text-accent hover:text-primary"
-        href={"/about"}
-      >
+      <Link className="underline text-accent font-normal" href={"/about"}>
         About
       </Link>
     </nav>

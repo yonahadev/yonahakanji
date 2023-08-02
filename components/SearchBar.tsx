@@ -13,7 +13,7 @@ const SearchBar = ({ submitEvent, placeholderText }: Props) => {
   return (
     <form
       onSubmit={handleSubmit(submitEvent)}
-      className="flex items-center justify-center w-full outline-accent outline outline-2 rounded-sm px-2"
+      className="flex items-center justify-center w-full border-accent border-2 rounded-sm px-2"
     >
       <input
         {...register("result")}

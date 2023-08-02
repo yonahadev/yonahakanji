@@ -21,7 +21,8 @@ const page = () => {
       <SearchBar placeholderText="" submitEvent={submitEvent} />
       <p className="text-sm opacity-50">
         yonahadic is a simple Japanese-English Kanji dictonary. To get started
-        type something into the search bar.
+        type something into the search bar & for more information go to the
+        about section.
       </p>
     </div>
   );

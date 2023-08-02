@@ -21,10 +21,11 @@ export default function Home({ params }: { params: { search: string } }) {
       setFormResult(params.search);
       setPlaceholderText(params.search);
     }
-    window.history.replaceState(null, "", "/search");
+    // window.history.replaceState(null, "", "/search");
   }, []);
   const submitEvent = (data: FormData) => {
     setFormResult(data.result);
+    window.history.replaceState(null, "", `/search/${data.result}`);
   };
 
   const [formResult, setFormResult] = useState<string>("");

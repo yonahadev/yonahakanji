@@ -61,7 +61,7 @@ const KanjiTable = ({ searchResult }: Props) => {
 
   return (
     <div className="mt-2">
-      <p className="opacity-50">
+      <p className="opacity-50 over break-words">
         {searchResult == "" ? (
           "Please enter something into the search bar."
         ) : (
@@ -74,8 +74,8 @@ const KanjiTable = ({ searchResult }: Props) => {
       {orderedKanji.map((kanji, index) => (
         <KanjiEntry key={index} kanji={kanji} />
       ))}
-      <Link className="underline text-accent" href={"/"}>
-        Back to main page
+      <Link className="underline text-accent font-semibold" href={"/"}>
+        Home
       </Link>
     </div>
   );
