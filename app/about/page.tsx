@@ -18,7 +18,7 @@ const page = () => {
         This site uses the{" "}
         <Link
           className="underline text-accent"
-          href={"https://foosoft.net/projects/yomichan/index.html#dictionaries"}
+          href={"http://nihongo.monash.edu/kanjidic2/index.html"}
         >
           KANJIDIC
         </Link>{" "}
