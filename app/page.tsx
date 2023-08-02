@@ -20,7 +20,7 @@ const page = () => {
       </h1>
       <SearchBar placeholderText="" submitEvent={submitEvent} />
       <p className="text-sm opacity-50 lg:w-3/4 lg:text-lg">
-        yonahadic is a simple Japanese-English Kanji dictonary. To get started
+        yonahakanji is a simple Japanese-English Kanji dictonary. To get started
         type something into the search bar & for more information go to the
         about section.
       </p>
