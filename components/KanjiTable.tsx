@@ -29,6 +29,11 @@ const KanjiTable = ({ searchResult }: Props) => {
     return array;
   };
 
+  const mixedCheck = (str: string) => {
+    const tokenised = wanakana.tokenize(str);
+    return tokenised;
+  };
+
   const kanjiArray = Object.values(Kanji);
 
   const finalResult = searchResultCheck(searchResult);
@@ -46,7 +51,13 @@ const KanjiTable = ({ searchResult }: Props) => {
             onyomi.includes(finalResult) ||
             kunyomi.includes(finalResult) ||
             meanings.includes(finalResult) ||
-            finalResult.split("").includes(kanjiChar)
+            finalResult.split("").includes(kanjiChar) ||
+            mixedCheck(finalResult).some(
+              (element) =>
+                onyomi.includes(element) ||
+                kunyomi.includes(element) ||
+                meanings.includes(element)
+            )
           );
         });
 
