@@ -20,30 +20,32 @@ const page = ({ params }: { params: { id: number } }) => {
   return (
     <>
       <SearchBar placeholderText="" submitEvent={submitEvent} />
-      <div className="grid-cols-[35%,65%] grid my-4 gap-2">
+      <div className="grid-cols-[35%,65%] lg:grid-cols-3 grid my-4 lg:my-20 gap-2">
         <div className="flex items-center flex-col gap-2">
-          <p className="text-7xl">{currentKanji[0]}</p>
-          <p className="bg-accent text-white w-3/4 p-1 rounded-lg text-center font-semibold">
-            {currentKanji[3]}
-          </p>
-          <p className="text-sm opacity-75">
+          <p className="text-7xl lg:text-8xl">{currentKanji[0]}</p>
+          {currentKanji[3] ? (
+            <p className="bg-accent text-white w-3/4 lg:w-fit p-1 lg:p-2 rounded-lg text-center font-semibold">
+              {currentKanji[3]}
+            </p>
+          ) : null}
+          <p className="text-sm opacity-75 lg:text-base">
             {currentKanji[5].strokes !== undefined
               ? `${currentKanji[5].strokes} strokes`
               : null}
           </p>
-          <p className="text-sm opacity-75">
+          <p className="text-sm opacity-75 lg:text-base">
             {currentKanji[5].grade !== undefined
               ? `Grade ${currentKanji[5].grade}`
               : null}
           </p>
-          <p className="text-sm opacity-75">
+          <p className="text-sm opacity-75 lg:text-base">
             {currentKanji[5].jlpt !== undefined
               ? `JLPT N${currentKanji[5].jlpt}`
               : null}
           </p>
         </div>
-        <div className="flex flex-col gap-2">
-          <p className="text-2xl">
+        <div className="flex flex-col gap-2 lg:text-center">
+          <p className="text-xl lg:text-2xl">
             {currentKanji[4].map(
               //maps english meaning
               (translation: string, index) => (
@@ -54,7 +56,7 @@ const page = ({ params }: { params: { id: number } }) => {
               )
             )}
           </p>
-          <p className="mt-2 text-xl">
+          <p className="mt-2 text-lg lg:text-xl">
             On:{" "}
             {stringToArray(currentKanji[1]).map(
               //maps  english meaning
@@ -66,7 +68,7 @@ const page = ({ params }: { params: { id: number } }) => {
               )
             )}
           </p>
-          <p className="text-xl">
+          <p className="text-lg lg:text-xl">
             Kun:{" "}
             {stringToArray(currentKanji[2]).map(
               //maps  english meaning
@@ -79,20 +81,20 @@ const page = ({ params }: { params: { id: number } }) => {
             )}
           </p>
         </div>
-        <div className="col-span-2 flex items-center flex-col gap-2 mt-4">
-          <p className="text-center text-sm opacity-50">
+        <div className="col-span-2 lg:col-span-1 flex items-center flex-col gap-2 mt-4 text-sm lg:text-base">
+          <p className="text-center  opacity-50">
             {currentKanji[5].freq !== undefined
               ? `${currentKanji[5].freq}/2500 most frequent word in newspapers`
               : null}
           </p>
-          <p className="text-sm opacity-50">
+          <p className=" opacity-50">
             {currentKanji[5].skip !== undefined
-              ? `${currentKanji[5].skip} skip code`
+              ? `${currentKanji[5].skip} SKIP code`
               : null}
           </p>
-          <p className="text-sm opacity-50">
+          <p className=" opacity-50">
             {currentKanji[5].ucs !== undefined
-              ? `${currentKanji[5].ucs} unicode`
+              ? `${currentKanji[5].ucs} unicode value`
               : null}
           </p>
         </div>

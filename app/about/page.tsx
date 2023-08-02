@@ -3,11 +3,11 @@ import React from "react";
 
 const page = () => {
   return (
-    <div className="text-center opacity-75">
+    <div className="text-center opacity-75 lg:text-xl lg:h-[calc(100%-8rem)] flex justify-center flex-col">
       <p>
-        Thanks for checking out my website. This is a simple kanji dictionary in
-        a familiar style for Japanese learners looking to find new Kanji or
-        remember existing ones.
+        Hi, I'm yonahadev, thanks for checking out my website! This is a simple
+        kanji dictionary in a familiar style for Japanese learners looking to
+        find new Kanji or remember existing ones.
       </p>
       <br></br>
       <p>

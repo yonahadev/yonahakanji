@@ -4,7 +4,7 @@ import { AiFillGithub } from "react-icons/ai";
 
 const Footer = () => {
   return (
-    <footer className="w-full h-16 flex items-center justify-center font-medium gap-1">
+    <footer className="w-full h-16 flex items-center justify-center font-medium gap-1 lg:text-lg">
       <AiFillGithub size="30" />
       <p>©</p>
       <Link

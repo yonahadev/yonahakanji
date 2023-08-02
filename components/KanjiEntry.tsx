@@ -10,7 +10,7 @@ interface Props {
 const KanjiEntry = ({ kanji }: Props) => {
   return (
     <div className="border-b-2 my-2">
-      <p className="opacity-50 mb-2">
+      <p className="opacity-50 mb-2 lg:text-lg">
         <span>
           {kanji[5].strokes !== undefined
             ? `${kanji[5].strokes} strokes. `
@@ -26,10 +26,10 @@ const KanjiEntry = ({ kanji }: Props) => {
         </span>
       </p>
       <div className="flex">
-        <Link href={`/kanji/${kanji.id}`} className="text-5xl ">
+        <Link href={`/kanji/${kanji.id}`} className="text-5xl lg:text-6xl">
           {kanji[0]}
         </Link>
-        <div className="ml-4 text-lg font-medium w-full flex flex-col">
+        <div className="ml-4 text-lg lg:text-xl font-medium w-full flex flex-col">
           {kanji[4].map(
             //maps english meaning
             (translation: string, index) => (
@@ -65,7 +65,7 @@ const KanjiEntry = ({ kanji }: Props) => {
           </p>
           <Link
             href={`/kanji/${kanji.id}`}
-            className="text-sm text-accent font-normal underline ml-auto"
+            className="text-sm text-accent lg:text-base font-normal underline ml-auto"
           >
             details
           </Link>
