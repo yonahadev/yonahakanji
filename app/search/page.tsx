@@ -32,7 +32,7 @@ export default function Home({ params }: { params: { search: string } }) {
 
   return (
     <main>
-      <SearchBar placeholderText={placeholderText} submitEvent={submitEvent} />
+      <SearchBar placeholderText={placeholderText} />
       <KanjiTable searchResult={formResult} />
     </main>
   );

@@ -1,6 +1,10 @@
 import Link from "next/link";
 import React from "react";
 
+export const metadata = {
+  title: "About - yonahakanji",
+};
+
 const page = () => {
   return (
     <div className="text-center opacity-75 lg:text-xl lg:h-[calc(100%-8rem)] flex justify-center flex-col">

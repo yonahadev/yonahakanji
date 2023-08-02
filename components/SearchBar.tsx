@@ -1,14 +1,19 @@
+"use client";
 import { FormData } from "@/interfaces";
+import { useRouter } from "next/navigation";
 import React from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { AiOutlineSearch } from "react-icons/ai";
 
 interface Props {
-  submitEvent: SubmitHandler<FormData>;
   placeholderText?: string;
 }
 
-const SearchBar = ({ submitEvent, placeholderText }: Props) => {
+const SearchBar = ({ placeholderText }: Props) => {
+  const router = useRouter();
+  const submitEvent = (data: FormData) => {
+    router.push(`/search/${data.result}`);
+  };
   const { register, handleSubmit } = useForm<FormData>();
   return (
     <form

@@ -1,14 +1,11 @@
-"use client";
 import SearchBar from "@/components/SearchBar";
-import { FormData } from "@/interfaces";
-import { useRouter } from "next/navigation";
 import React from "react";
 
+export const metadata = {
+  title: "Home - yonahakanji",
+};
+
 const page = () => {
-  const router = useRouter();
-  const submitEvent = (data: FormData) => {
-    router.push(`/search/${data.result}`);
-  };
   return (
     <div className="w-full h-[calc(100%-8rem)] flex justify-center items-center text-center flex-col gap-4">
       <h1 className="text-3xl lg:text-5xl font-bold tracking-tighter">
@@ -18,8 +15,8 @@ const page = () => {
         </span>{" "}
         dictonary
       </h1>
-      <SearchBar placeholderText="" submitEvent={submitEvent} />
-      <p className="text-sm opacity-50 lg:w-3/4 lg:text-lg">
+      <SearchBar />
+      <p className="text-sm opacity-50 lg:text-lg">
         yonahakanji is a simple Japanese-English Kanji dictonary. To get started
         type something into the search bar & for more information go to the
         about section.

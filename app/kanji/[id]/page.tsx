@@ -19,7 +19,7 @@ const page = ({ params }: { params: { id: number } }) => {
 
   return (
     <>
-      <SearchBar placeholderText="" submitEvent={submitEvent} />
+      <SearchBar placeholderText="" />
       <div className="grid-cols-[35%,65%] lg:grid-cols-3 grid my-4 lg:my-20 gap-2">
         <div className="flex items-center flex-col gap-2">
           <p className="text-7xl lg:text-8xl">{currentKanji[0]}</p>
