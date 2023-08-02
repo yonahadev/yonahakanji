@@ -1,6 +1,17 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Taken from website about section
+This is a simple kanji dictionary in a familiar style for Japanese learners looking to find new Kanji or remember existing ones.
 
+This site uses the KANJIDIC dictionary which contains numerous pieces of additional data which can be used to identify each kanji. The site has a total of 10350 kanji ranging from the most used to lesser used ones.
+
+## Libraries/Tools
+react-hook-form <br/>
+wanakana <br/>
+nextjs <br/>
+react <br/>
+tailwindcss <br/> 
+realtimecolours <br/>
 ## Getting Started
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 First, run the development server:
 
