@@ -1,4 +1,4 @@
-## About (taken from website)
+## About
 Hi, I'm yonahadev, thanks for checking out my website! This is a simple kanji dictionary in a familiar style for Japanese learners looking to find new Kanji or remember existing ones.
 
 
@@ -6,9 +6,6 @@ This site uses the [**KANJIDIC**](http://nihongo.monash.edu/kanjidic2/index.html
 
 
 Each kanji has information regarding its Kunyomi and Onyomi readings as well as the English translation. You can search with either the English Japanese character sets including Romaji, Hiragana, Katakana and Kanji. The current system ranks search results by newspaper frequency to try and estimate relevance, although I would be willing to listen to any suggestions to try and improve this.
-
-
-If you have any issues or would like to look at more of my work, feel free to click my github link below to find me. Happy learning!
 
 ## Libraries/Tools
 react-hook-form <br/>
